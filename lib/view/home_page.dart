@@ -3,6 +3,8 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:test_project/widget/custom_appbar.dart';
 
+import 'job/job_detail.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -11,7 +13,7 @@ class HomePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFFF0F0F0),
+        backgroundColor: const Color(0xFFF0F0F0),
         appBar: AppBar(
           elevation: 0,
           title: const Text(
@@ -22,7 +24,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.white,
         ),
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
               Padding(
@@ -30,7 +32,7 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   children: [
                     const Padding(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: EdgeInsets.only(left: 12.0),
                       child: Align(
                         alignment: Alignment.topLeft,
                         child: Text(
@@ -43,71 +45,85 @@ class HomePage extends StatelessWidget {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 10),
+                        padding: const EdgeInsets.only(left: 12, right: 10),
                         child: Row(children: [
-                          SizedBox(
-                            height: 190,
-                            width: 180,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6),
-                              ),
-                              elevation: 0,
-                              margin: const EdgeInsets.only(right: 12, top: 10),
-                              child: Column(
-                                // crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  ListTile(
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 16),
-                                    leading: Image.asset(
-                                      "assets/images/manjaro.png",
-                                    ),
-                                    trailing: const Icon(Icons.bookmark_border),
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      children: const [
-                                        ListTile(
-                                          contentPadding: EdgeInsets.symmetric(
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const JobDetail()),
+                              );
+                            },
+                            child: SizedBox(
+                              height: 190,
+                              width: 180,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6),
+                                ),
+                                elevation: 0,
+                                margin:
+                                    const EdgeInsets.only(right: 8, top: 10),
+                                child: Column(
+                                  // crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    ListTile(
+                                      contentPadding:
+                                          const EdgeInsets.symmetric(
                                               horizontal: 16),
-                                          title: Text(
-                                            "Fullstack Engineer",
-                                            style: TextStyle(fontSize: 14),
-                                          ),
-                                          subtitle: Text("Manjaro OS"),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 16, vertical: 2),
-                                          child: Align(
-                                            alignment: Alignment.topLeft,
-                                            child: Text(
-                                              '\$1000 - \$2000',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w600),
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 16, vertical: 2),
-                                          child: Align(
-                                            alignment: Alignment.bottomLeft,
-                                            child: Text(
-                                              'Fulltime, Singapore',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.w400,
-                                                  color: Color.fromARGB(
-                                                      255, 167, 167, 167),
-                                                  fontSize: 12),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
+                                      leading: Image.asset(
+                                        "assets/images/manjaro.png",
+                                      ),
+                                      trailing:
+                                          const Icon(Icons.bookmark_border),
                                     ),
-                                  ),
-                                ],
+                                    Expanded(
+                                      child: Column(
+                                        children: const [
+                                          ListTile(
+                                            contentPadding:
+                                                EdgeInsets.symmetric(
+                                                    horizontal: 16),
+                                            title: Text(
+                                              "Fullstack Engineer",
+                                              style: TextStyle(fontSize: 14),
+                                            ),
+                                            subtitle: Text("Manjaro OS"),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 16, vertical: 2),
+                                            child: Align(
+                                              alignment: Alignment.topLeft,
+                                              child: Text(
+                                                '\$1000 - \$2000',
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 16, vertical: 2),
+                                            child: Align(
+                                              alignment: Alignment.bottomLeft,
+                                              child: Text(
+                                                'Fulltime, Singapore',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w400,
+                                                    color: Color.fromARGB(
+                                                        255, 167, 167, 167),
+                                                    fontSize: 12),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -119,7 +135,7 @@ class HomePage extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(6),
                               ),
                               elevation: 0,
-                              margin: const EdgeInsets.only(right: 12, top: 10),
+                              margin: const EdgeInsets.only(right: 8, top: 10),
                               child: Column(
                                 // crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
@@ -264,7 +280,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 12.0),
                       child: Row(
                         children: [
                           SizedBox(
@@ -283,8 +299,8 @@ class HomePage extends StatelessWidget {
                                     dense: true,
                                     // isThreeLine: true,
                                     horizontalTitleGap: -2,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 12),
                                     leading: Image.asset(
                                       "assets/images/Brandfetch.png",
                                     ),
@@ -292,7 +308,7 @@ class HomePage extends StatelessWidget {
                                       "Software Engineer",
                                       style: TextStyle(fontSize: 14),
                                     ),
-                                    subtitle: Text("Brandfetch"),
+                                    subtitle: const Text("Brandfetch"),
                                   ),
                                   Expanded(
                                     child: Column(
@@ -379,14 +395,16 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                         const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 16),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Align(
-                                            alignment: Alignment.centerLeft,
+                                              alignment: Alignment.centerLeft,
                                               child: Text(
-                                            "3 Hours Ago",
-                                            style: TextStyle(
-                                                color: Colors.grey, fontSize: 12),
-                                          )),
+                                                "3 Hours Ago",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12),
+                                              )),
                                         )
                                       ],
                                     ),
@@ -411,8 +429,8 @@ class HomePage extends StatelessWidget {
                                     dense: true,
                                     // isThreeLine: true,
                                     horizontalTitleGap: -2,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 12),
                                     leading: Image.asset(
                                       "assets/images/React.png",
                                     ),
@@ -507,14 +525,16 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                         const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 16),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Align(
-                                            alignment: Alignment.centerLeft,
+                                              alignment: Alignment.centerLeft,
                                               child: Text(
-                                            "3 Hours Ago",
-                                            style: TextStyle(
-                                                color: Colors.grey, fontSize: 12),
-                                          )),
+                                                "3 Hours Ago",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12),
+                                              )),
                                         )
                                       ],
                                     ),
@@ -527,7 +547,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 12.0),
                       child: Row(
                         children: [
                           SizedBox(
@@ -546,8 +566,8 @@ class HomePage extends StatelessWidget {
                                     dense: true,
                                     // isThreeLine: true,
                                     horizontalTitleGap: -2,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 12),
                                     leading: Image.asset(
                                       "assets/images/Vue.png",
                                     ),
@@ -642,14 +662,16 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                         const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 16),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Align(
-                                            alignment: Alignment.centerLeft,
+                                              alignment: Alignment.centerLeft,
                                               child: Text(
-                                            "5 Hours Ago",
-                                            style: TextStyle(
-                                                color: Colors.grey, fontSize: 12),
-                                          )),
+                                                "5 Hours Ago",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12),
+                                              )),
                                         )
                                       ],
                                     ),
@@ -674,8 +696,8 @@ class HomePage extends StatelessWidget {
                                     dense: true,
                                     // isThreeLine: true,
                                     horizontalTitleGap: -2,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 12),
                                     leading: Image.asset(
                                       "assets/images/Angular.png",
                                     ),
@@ -770,14 +792,16 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                         const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 16),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Align(
-                                            alignment: Alignment.centerLeft,
+                                              alignment: Alignment.centerLeft,
                                               child: Text(
-                                            "10 Hours Ago",
-                                            style: TextStyle(
-                                                color: Colors.grey, fontSize: 12),
-                                          )),
+                                                "10 Hours Ago",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12),
+                                              )),
                                         )
                                       ],
                                     ),
@@ -790,7 +814,7 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 20.0),
+                      padding: const EdgeInsets.only(left: 12.0),
                       child: Row(
                         children: [
                           SizedBox(
@@ -809,8 +833,8 @@ class HomePage extends StatelessWidget {
                                     dense: true,
                                     // isThreeLine: true,
                                     horizontalTitleGap: -2,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 12),
                                     leading: Image.asset(
                                       "assets/images/Node.png",
                                     ),
@@ -905,14 +929,16 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                         const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 16),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Align(
-                                            alignment: Alignment.centerLeft,
+                                              alignment: Alignment.centerLeft,
                                               child: Text(
-                                            "12 Hours Ago",
-                                            style: TextStyle(
-                                                color: Colors.grey, fontSize: 12),
-                                          )),
+                                                "12 Hours Ago",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12),
+                                              )),
                                         )
                                       ],
                                     ),
@@ -937,8 +963,8 @@ class HomePage extends StatelessWidget {
                                     dense: true,
                                     // isThreeLine: true,
                                     horizontalTitleGap: -2,
-                                    contentPadding:
-                                        EdgeInsets.symmetric(horizontal: 12),
+                                    contentPadding: const EdgeInsets.symmetric(
+                                        horizontal: 12),
                                     leading: Image.asset(
                                       "assets/images/Jquery.png",
                                     ),
@@ -1033,14 +1059,16 @@ class HomePage extends StatelessWidget {
                                           ),
                                         ),
                                         const Padding(
-                                          padding: EdgeInsets.symmetric(horizontal: 16),
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 16),
                                           child: Align(
-                                            alignment: Alignment.centerLeft,
+                                              alignment: Alignment.centerLeft,
                                               child: Text(
-                                            "12 Hours Ago",
-                                            style: TextStyle(
-                                                color: Colors.grey, fontSize: 12),
-                                          )),
+                                                "12 Hours Ago",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12),
+                                              )),
                                         )
                                       ],
                                     ),

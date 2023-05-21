@@ -30,7 +30,7 @@ class _RoutePageState extends State<RoutePage> {
     const HomePage(),
     const ExplorePage(),
     const InboxPage(),
-    // const ProfilePage(),
+    const ProfilePage(),
   ];
 
   @override

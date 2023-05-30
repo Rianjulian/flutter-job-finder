@@ -3,7 +3,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class JobDetail extends StatelessWidget {
-  const JobDetail({super.key});
+  const JobDetail({super.key, required this.title, required this.salary, required this.company, required this.image, 
+  required this.location});
+
+  final String title;
+  final String salary;
+  final String company;
+  final String image;
+  final String location;
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +32,7 @@ class JobDetail extends StatelessWidget {
           backgroundColor: Colors.white,
         ),
         body: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(vertical: 20.0),
           child: Column(
             children: [
               Row(
@@ -36,16 +44,16 @@ class JobDetail extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset(
-                          "assets/images/manjaro.png",
+                          image,
                           height: 60,
                           width: 60,
                           fit: BoxFit.cover,
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 12.0, bottom: 20.0),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 12.0, bottom: 20.0),
                           child: Text(
-                            "Fullstack Engineer",
-                            style: TextStyle(
+                            title,
+                            style: const TextStyle(
                                 fontSize: 20,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold),
@@ -62,9 +70,9 @@ class JobDetail extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         children: [
-                          WidgetSpan(
+                          const WidgetSpan(
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 4.0),
                               child: Icon(
@@ -75,8 +83,8 @@ class JobDetail extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                              text: 'Manjaro Corp',
-                              style: TextStyle(
+                              text: company,
+                              style: const TextStyle(
                                   color: Colors.black, fontSize: 16.0)),
                         ],
                       ),
@@ -85,9 +93,9 @@ class JobDetail extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         children: [
-                          WidgetSpan(
+                          const WidgetSpan(
                             child: Padding(
                               padding: EdgeInsets.symmetric(horizontal: 4.0),
                               child: Icon(
@@ -98,8 +106,8 @@ class JobDetail extends StatelessWidget {
                             ),
                           ),
                           TextSpan(
-                              text: 'Jakarta, Indonesia',
-                              style: TextStyle(
+                              text: location,
+                              style: const TextStyle(
                                   color: Colors.black, fontSize: 16.0)),
                         ],
                       ),
@@ -170,16 +178,18 @@ class JobDetail extends StatelessWidget {
                         children: [
                           Flexible(
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 4.0),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
                                   child: RichText(
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
                                           child: Padding(
-                                            padding:
-                                                EdgeInsets.symmetric(horizontal: 4.0),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 4.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
@@ -190,20 +200,22 @@ class JobDetail extends StatelessWidget {
                                         TextSpan(
                                             text: 'Minimum SMK Lah',
                                             style: TextStyle(
-                                                color: Colors.black, fontSize: 14.0)),
+                                                color: Colors.black,
+                                                fontSize: 14.0)),
                                       ],
                                     ),
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
                                   child: RichText(
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
                                           child: Padding(
-                                            padding:
-                                                EdgeInsets.symmetric(horizontal: 4.0),
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 4.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
@@ -214,7 +226,86 @@ class JobDetail extends StatelessWidget {
                                         TextSpan(
                                             text: 'Banyak bisanya',
                                             style: TextStyle(
-                                                color: Colors.black, fontSize: 14.0)),
+                                                color: Colors.black,
+                                                fontSize: 14.0)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
+                                  child: RichText(
+                                    text: const TextSpan(
+                                      children: [
+                                        WidgetSpan(
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 4.0),
+                                            child: Icon(
+                                              Icons.brightness_1_rounded,
+                                              color: Colors.black87,
+                                              size: 14.0,
+                                            ),
+                                          ),
+                                        ),
+                                        TextSpan(
+                                            text: 'Mau Disuruh suruh',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 14.0)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
+                                  child: RichText(
+                                    text: const TextSpan(
+                                      children: [
+                                        WidgetSpan(
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 4.0),
+                                            child: Icon(
+                                              Icons.brightness_1_rounded,
+                                              color: Colors.black87,
+                                              size: 14.0,
+                                            ),
+                                          ),
+                                        ),
+                                        TextSpan(
+                                            text: 'Gaji Sedengan',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 14.0)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 8.0),
+                                  child: RichText(
+                                    text: const TextSpan(
+                                      children: [
+                                        WidgetSpan(
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 4.0),
+                                            child: Icon(
+                                              Icons.brightness_1_rounded,
+                                              color: Colors.black87,
+                                              size: 14.0,
+                                            ),
+                                          ),
+                                        ),
+                                        TextSpan(
+                                            text: 'Ikutin aja aturan yang ada',
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontSize: 14.0)),
                                       ],
                                     ),
                                   ),
@@ -225,6 +316,93 @@ class JobDetail extends StatelessWidget {
                         ],
                       )
                     ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.symmetric(vertical: 8.0),
+                            child: Text(
+                              "Salary",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 18.0,
+                                  fontWeight: FontWeight.w600),
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 4.0),
+                                  child: RichText(
+                                    text: TextSpan(
+                                      children: [
+                                        const WidgetSpan(
+                                          alignment:
+                                              PlaceholderAlignment.middle,
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                                horizontal: 4.0),
+                                            child: Icon(
+                                              Icons.money,
+                                              color: Colors.black87,
+                                              size: 30.0,
+                                            ),
+                                          ),
+                                        ),
+                                        TextSpan(
+                                            text: salary,
+                                            style: const TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 1, 103, 255),
+                                                fontSize: 18.0,
+                                                fontWeight: FontWeight.bold)),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 20.0),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: SizedBox(
+                    height: 44.0,
+                    width: double.infinity,
+                    child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(
+                          backgroundColor: const Color.fromARGB(255, 0, 94, 244),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20))),
+                      child: const Text(
+                        "Kirim Lamaran",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
                 ),
               )

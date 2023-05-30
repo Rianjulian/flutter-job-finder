@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
           '/profile/account': (context) => const DetailAccount(),
           '/profile/language': (context) => const Language(),
           '/profile/password': (context) => const ChangePassword(),
-          '/job/detail-job': (context) => const JobDetail(),
+          '/job/detail-job': (context) => const JobDetail(salary: '', title: '', company: '', image: '', location: '',),
         },
       );
     });

@@ -162,7 +162,7 @@ class JobDetail extends StatelessWidget {
                       Row(
                         children: const [
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 8.0),
+                            padding: EdgeInsets.symmetric(vertical: 16.0),
                             child: Text(
                               "Requirements",
                               style: TextStyle(
@@ -187,13 +187,14 @@ class JobDetail extends StatelessWidget {
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
+                                          alignment: PlaceholderAlignment.middle,
                                           child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 4.0),
+                                            padding: EdgeInsets.only(
+                                                right: 10.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
-                                              size: 14.0,
+                                              size: 10.0,
                                             ),
                                           ),
                                         ),
@@ -213,13 +214,14 @@ class JobDetail extends StatelessWidget {
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
+                                          alignment: PlaceholderAlignment.middle,
                                           child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 4.0),
+                                            padding: EdgeInsets.only(
+                                                right: 10.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
-                                              size: 14.0,
+                                              size: 10.0,
                                             ),
                                           ),
                                         ),
@@ -239,13 +241,14 @@ class JobDetail extends StatelessWidget {
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
+                                          alignment: PlaceholderAlignment.middle,
                                           child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 4.0),
+                                            padding: EdgeInsets.only(
+                                                right: 10.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
-                                              size: 14.0,
+                                              size: 10.0,
                                             ),
                                           ),
                                         ),
@@ -265,13 +268,14 @@ class JobDetail extends StatelessWidget {
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
+                                          alignment: PlaceholderAlignment.middle,
                                           child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 4.0),
+                                            padding: EdgeInsets.only(
+                                                right: 10.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
-                                              size: 14.0,
+                                              size: 10.0,
                                             ),
                                           ),
                                         ),
@@ -291,13 +295,14 @@ class JobDetail extends StatelessWidget {
                                     text: const TextSpan(
                                       children: [
                                         WidgetSpan(
+                                          alignment: PlaceholderAlignment.middle,
                                           child: Padding(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 4.0),
+                                            padding: EdgeInsets.only(
+                                                right: 10.0),
                                             child: Icon(
                                               Icons.brightness_1_rounded,
                                               color: Colors.black87,
-                                              size: 14.0,
+                                              size: 10.0,
                                             ),
                                           ),
                                         ),

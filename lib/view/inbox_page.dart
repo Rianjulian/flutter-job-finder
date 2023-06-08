@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:test_project/view/inbox/notification.dart';
 
 class InboxPage extends StatelessWidget {
   const InboxPage({Key? key}) : super(key: key);
@@ -127,11 +128,21 @@ class InboxPage extends StatelessWidget {
               Column(
                 children: [
                   ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NotificationPage(
+                                  title: "Google Review your CV",
+                                  subtitle: "Fulfills pre-requirements of the job, initiate assessment. Resume candidate application from last completed stage.",
+                                )),
+                      );
+                    },
                     title: const Text(
                       "Google Review your CV",
                       style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
-                    subtitle: Text("Your Cover letter is shit"),
+                    subtitle: Text("Fulfills pre-requirements of the..."),
                     dense: true,
                     leading: Image.asset(
                       "assets/images/Google.png",
@@ -139,11 +150,21 @@ class InboxPage extends StatelessWidget {
                     trailing: const Icon(Icons.chevron_right_rounded),
                   ),
                   ListTile(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NotificationPage(
+                                  title: "Github Rejected your CV",
+                                  subtitle: "Your Cover Letter is shit",
+                                )),
+                      );
+                    },
                     title: const Text(
                       "Github Rejected your CV",
                       style: TextStyle(color: Colors.black, fontSize: 14),
                     ),
-                    subtitle: Text("Your Cover letter is shit"),
+                    subtitle: Text("Your Cover letter is shit..."),
                     dense: true,
                     leading: Image.asset(
                       "assets/images/Github.png",

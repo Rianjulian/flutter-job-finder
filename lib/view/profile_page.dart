@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:test_project/view/auth/register.dart';
 import 'package:test_project/view/profile/change_password.dart';
 import 'package:test_project/view/profile/detail_account.dart';
 import 'package:test_project/view/profile/detail_cv.dart';
@@ -179,15 +180,21 @@ class ProfilePage extends StatelessWidget {
                 height: 44.0,
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Keluar Akun",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterPage()),
+                    );
+                  },
                   style: TextButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 244, 16, 0),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20))),
+                  child: const Text(
+                    "Keluar Akun",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             )

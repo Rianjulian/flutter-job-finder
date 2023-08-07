@@ -15,16 +15,16 @@ class ButtonProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 0),
       child: Material(
         color: colour,
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(10),
         child: MaterialButton(
           // splashColor: Color.fromARGB(255, 239, 117, 117),
           animationDuration: Duration(milliseconds: 1000),
           onPressed: onPressed,
           minWidth: double.infinity,
-          height: 50,
+          height: 55,
           child: Text(
             title,
             style: const TextStyle(

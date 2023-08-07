@@ -56,7 +56,7 @@ class NotificationPage extends StatelessWidget {
                       subtitle,
                       style: const TextStyle(
                         fontSize: 16.0,
-                        height: 1.5,
+                        height: 1.4,
                       ),
                     ),
                   ),
@@ -89,10 +89,10 @@ class NotificationPage extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 12.0),
                     child: const Text(
-                      "Don't miss out on this exciting opportunity! Log in to your account and apply now.Remember to keep your profile up to date and regularly check for new job alerts. Best of luck with your job search!",
+                      "Don't miss out on this exciting opportunity! Log in to your account and apply now. Remember to keep your profile up to date and regularly check for new job alerts. Best of luck with your job search!",
                       style: TextStyle(
                         fontSize: 16.0,
-                        height: 1.3,
+                        height: 1.4,
                       ),
                     ),
                   )

@@ -3,8 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_localizations/syncfusion_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sizer/sizer.dart';
+import 'package:test_project/view/auth/register.dart';
 import 'package:test_project/view/explore_page.dart';
 import 'package:test_project/view/home_page.dart';
+import 'package:test_project/view/inbox/notification.dart';
 import 'package:test_project/view/inbox_page.dart';
 import 'package:test_project/view/job/job_detail.dart';
 import 'package:test_project/view/profile/change_password.dart';
@@ -44,7 +46,8 @@ class MyApp extends StatelessWidget {
               ],
               locale: const Locale('id'),
         routes: {
-          '/': (context) => const RoutePage(),
+          '/': (context) => const RegisterPage(),
+          '/home': (context) => const RoutePage(),
           '/explore': (context) => const ExplorePage(),
           '/inbox': (context) => const InboxPage(),
           '/profile': (context) => const ProfilePage(),
@@ -54,6 +57,7 @@ class MyApp extends StatelessWidget {
           '/profile/language': (context) => const Language(),
           '/profile/password': (context) => const ChangePassword(),
           '/job/detail-job': (context) => const JobDetail(salary: '', title: '', company: '', image: '', location: '',),
+          '/inbox/notif-job': (context) => const NotificationPage(subtitle: '', title: '',),
         },
       );
     });
